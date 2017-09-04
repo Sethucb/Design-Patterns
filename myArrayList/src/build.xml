@@ -1,0 +1,28 @@
+<project name="Myarraylist">
+	
+	<target name="init" description="Creates BUILD dir">
+	    <mkdir dir="BUILD/classes" />
+	</target>
+
+	<target name="all" depends="clean, init" description="compiles and generate .class files">
+	    <javac includeantruntime="false" srcdir="myArrayList" destdir="BUILD/classes" />
+	</target>
+
+	<target name="clean">
+	    <delete dir="BUILD" />
+	</target>
+
+	<target name="jar" depends="all" description="package, output to JAR">
+		<mkdir dir="BUILD/jar" />
+		<jar destfile="BUILD/jar/Myarraylist.jar" basedir="BUILD/classes">
+			<manifest>
+				<attribute name="Main-Class" value="myArrayList.driver.Driver" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="run" depends="jar">
+	        <java jar="BUILD/jar/Myarraylist.jar" fork="true"/>
+	</target>
+
+</project>
