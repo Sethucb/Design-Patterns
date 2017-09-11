@@ -5,7 +5,6 @@
   <property name="BUILD"                value="src/BUILD"/>
   <property name="classes"              value="${BUILD}/classes"/>
 
-
   <target name="all" depends="compile_all"/>
 
   <target name="compile_all"
@@ -48,6 +47,7 @@
            deprecation="off"/>
   </target>
 
+<!-- <property name="arg2" value="-ea"/> -->
 
 <target name="run" depends="jar">
         <java jar="${BUILD}/jar/myArrayList.jar"  fork="true">
