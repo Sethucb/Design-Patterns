@@ -8,7 +8,6 @@ import java.io.FileReader;
 
 public class MyArrayListTest{
 
-
 	public void testMe(MyArrayList myArrayList, Results results){
 
 		myArrayList.insertSorted(4);
@@ -29,7 +28,8 @@ public class MyArrayListTest{
 	
 	}
 
-	// 
+	/* Test to check the size of ArrayList after insertion
+	*/
 	public void checkSizeafterInsertion(MyArrayList myArrayList, Results results){		
 		if(myArrayList.size() == 5){
 			results.storeNewResult("Test to check the size of ArrayList after insertion : " + "PASSED");
@@ -39,6 +39,8 @@ public class MyArrayListTest{
 		}
 	}
 
+	/* Test to check the if ArrayList is sorted after insertion
+	*/
 	public void checkSortedafterInsertion(MyArrayList myArrayList, Results results){
 		int[] myArray = myArrayList.getMyarray();
 		int[] sortedArray = {1,1,2,3,4};
@@ -51,6 +53,8 @@ public class MyArrayListTest{
 		results.storeNewResult("Test to check the if ArrayList is sorted after insertion : " + "PASSED");
 	}
 
+	/* Test to check the if ArrayList is sorted(NegativeTC)
+	*/
 	public void negativeTCforsorting(MyArrayList myArrayList, Results results){
 		int[] myArray = myArrayList.getMyarray();
 		int[] sortedArray = {1,1,2,4};
@@ -63,6 +67,8 @@ public class MyArrayListTest{
 		results.storeNewResult("Test to check the if ArrayList is sorted : " + "PASSED");
 	}
 
+	/* Test to check the size of ArrayList after deletion 
+	*/
 	public void checkSizeafterDeletion(MyArrayList myArrayList, Results results){
 		myArrayList.removeValue(1);
 		if(myArrayList.size() != 3){
@@ -73,6 +79,8 @@ public class MyArrayListTest{
 		}
 	}
 
+	/* Test to check the if ArrayList is sorted after deletion
+	*/
 	public void checkSortedafterDeletion(MyArrayList myArrayList, Results results){
 		int[] myArray = myArrayList.getMyarray();
 		int[] sortedArray = {2,3,4};
@@ -86,6 +94,8 @@ public class MyArrayListTest{
 	
 	}
 
+	/* Test to find index of existing element
+	*/
 	public void findIndexofExistingNumber(MyArrayList myArrayList, Results results){
 		int index = myArrayList.indexOf(3);
 		if(index != 1){
@@ -95,6 +105,8 @@ public class MyArrayListTest{
 		results.storeNewResult("Test to find index of existing element : " + "PASSED");
 	}
 
+	/* Test to find index of existing element
+	*/
 	public void findIndexofNonExistingNumber(MyArrayList myArrayList, Results results){
 		int index = myArrayList.indexOf(6);
 		if(index != -1){
@@ -104,6 +116,8 @@ public class MyArrayListTest{
 		results.storeNewResult("Test to find index of existing element : " + "PASSED");
 	}
 
+	/* Test to check the sum of the list elements
+	*/
 	public void checkSumofList(MyArrayList myArrayList, Results results){
 		int sum = myArrayList.sum();
 		if(sum == 9){
@@ -113,6 +127,8 @@ public class MyArrayListTest{
 		results.storeNewResult("Test to check the sum of the list elements : " + "FAILED");
 	}
 
+	/* Test to check the resize of the list
+	*/
 	public void checkResizeofList(MyArrayList myArrayList, Results results){
 		try{
 			FileReader fr = new FileReader("testInput.txt");
@@ -138,6 +154,8 @@ public class MyArrayListTest{
 		results.storeNewResult("Test to check the resize of the list : " + "FAILED");
 	}
 
+	/* est to check the sum and size of the list after resizing
+	*/
 	public void checkSizeSumafterResizing(MyArrayList myArrayList, Results results){
 		if(myArrayList.size() == 52 && myArrayList.sum() == 1234){
 			results.storeNewResult("Test to check the sum and size of the list after resizing : " + "PASSED");

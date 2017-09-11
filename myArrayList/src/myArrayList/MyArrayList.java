@@ -111,6 +111,7 @@ public class MyArrayList {
 			System.out.print(this.myArray[i] + ", ");
 		}
 		System.out.print(" ]");
+		System.out.println();
 		return null;
 	}
 

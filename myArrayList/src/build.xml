@@ -53,7 +53,7 @@
         <java jar="${BUILD}/jar/myArrayList.jar"  fork="true">
 		<arg value="${arg0}"/>
 		<arg value="${arg1}"/>
-		<arg value="${arg2}"/>
+		<!-- <arg value="${arg2}"/> -->
         </java>
 	
     </target>
