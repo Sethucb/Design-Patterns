@@ -87,6 +87,7 @@ public class MyArrayList {
 	/* Returns the sum of the elements of the arrayList
 	*/
 	public int sum() {
+		// Check for Int.Max
 		int total = 0;
 		for (int i = 0; i < size; i++) {
 			total += myArray[i];
