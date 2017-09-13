@@ -11,7 +11,7 @@ ant -buildfile src/build.xml all
 -----------------------------------------------------------------------
 ## To run by specifying arguments from command line 
 ## We will use this to run your code
-ant -buildfile src/build.xml run -Darg0=FIRST -Darg1=SECOND -Darg2=THIRD
+ant -buildfile src/build.xml run -Darg0=FIRST.txt -Darg1=SECOND.txt
 
 -----------------------------------------------------------------------
 
@@ -29,13 +29,19 @@ grade of 0 for the involved assignment for my first offense and that I
 will receive a grade of F for the course for any additional
 offense.”
 
-[Date: ]
+[Date: 13-Sep-2017]
 
 -----------------------------------------------------------------------
 
 Provide justification for Data Structures used in this assignment in
 term of Big O complexity (time and/or space)
 
+I have used an ArrayList to store the test results in Result class.
+It saves 10 test results and I have iterated over them in main to write
+to file and stdout.
+
+I have also included a "testInput.txt" file that is required in one of
+the test methods to check for array resizing.
 -----------------------------------------------------------------------
 
 Provide list of citations (urls, etc.) from where you have taken code

@@ -2,8 +2,10 @@ package myArrayList.test;
 
 import myArrayList.MyArrayList;
 import myArrayList.util.Results;
+import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 
 
 public class MyArrayListTest{
@@ -25,7 +27,6 @@ public class MyArrayListTest{
 		findIndexofNonExistingNumber(myArrayList,results);
 		checkSumofList(myArrayList,results);
 		checkResizeofList(myArrayList,results);		
-	
 	}
 
 	/* Test to check the size of ArrayList after insertion
@@ -130,9 +131,17 @@ public class MyArrayListTest{
 	/* Test to check the resize of the list
 	*/
 	public void checkResizeofList(MyArrayList myArrayList, Results results){
+		
+		FileReader fr = null;
+		BufferedReader br = null;
 		try{
-			FileReader fr = new FileReader("testInput.txt");
-			BufferedReader br = new BufferedReader(fr);
+			File myFile = new File("testInput.txt");
+			if(!myFile.exists()) {
+			    System.out.println("Test input file does not exist.Please include it");
+			    System.exit(1);
+			}
+			fr = new FileReader("testInput.txt");
+			br = new BufferedReader(fr);
 
 			String currentLine = null;
 
@@ -146,6 +155,12 @@ public class MyArrayListTest{
 			}
 		}catch(Exception e){
 			e.printStackTrace();
+		}
+		finally{
+			try{
+				fr.close();
+				br.close();
+			}  catch (IOException ignore) {}
 		}
 		if(myArrayList.capacity() == 75){
 			results.storeNewResult("Test to check the resize of the list : " + "PASSED");

@@ -27,5 +27,13 @@ public class FileProcessor{
 			return null;
 		}
 	}
+
+	public void closeFile(){
+		try{
+			fr.close();
+			br.close();	
+		}
+		catch(IOException ignore){}		
+	}
 	
 }

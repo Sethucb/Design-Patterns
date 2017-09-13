@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import myArrayList.util.FileDisplayInterface;
 import java.io.BufferedWriter;
 import myArrayList.util.StdoutDisplayInterface;
+import java.io.IOException;
 
 public class Results implements FileDisplayInterface,StdoutDisplayInterface{
 
@@ -36,6 +37,13 @@ public class Results implements FileDisplayInterface,StdoutDisplayInterface{
 
 	public void writeToStdout(String s){
 		System.out.println(s);
+	}
+
+	public void closeFile(){
+		try{
+			bwriter.close();	
+		}
+		catch(IOException ignore){}		
 	}
 
 }

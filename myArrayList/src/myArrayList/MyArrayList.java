@@ -52,7 +52,7 @@ public class MyArrayList {
 	this.size -= count;		
 	}
 
-	/* Returns the private array which is used in Test file
+	/* Returns the array which is used in Test file
 	*/
 	public int[] getMyarray(){
 		return this.myArray;
@@ -87,9 +87,12 @@ public class MyArrayList {
 	/* Returns the sum of the elements of the arrayList
 	*/
 	public int sum() {
-		// Check for Int.Max
 		int total = 0;
 		for (int i = 0; i < size; i++) {
+			if(total >= Integer.MAX_VALUE - myArray[i]){
+				System.out.println("Sum exceeds Integer.MAX_VALUE");
+				System.exit(1);
+			}
 			total += myArray[i];
 		}
 		this.sum = total;
